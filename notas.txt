@@ -1,0 +1,33 @@
+composer create-project laravel/laravel api-crud-product
+composer dump-autoload
+php artisan install:api
+
+Creat Status:
+
+Table Status
+id, name
+  
+php artisan make:model Status --migration
+php artisan migrate
+php artisan migrate:status
+php artisan make:controller StatusController --api
+php artisan make:interface StatusControllerInterface
+
+Creat Product:
+
+table Product
+id
+name
+description
+price
+status_id
+stock_quantity
+
+php artisan make:model Product --migration
+php artisan migrate
+php artisan make:controller ProductController --api
+php artisan make:interface ProductControllerInterface
+php artisan make:resource ProductResource
+
+Documentação Postman
+https://documenter.getpostman.com/view/25859010/2sA3Bj7tAm
