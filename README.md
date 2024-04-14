@@ -25,9 +25,9 @@ Para começar, clone este repositório e instale as dependências:
 2. Renomeie o arquivo .env.example para .env.
 3. Configure as credenciais do banco de dados no arquivo .env:
 
-    Defina DB_CONNECTION como mysql.
-    Defina DB_DATABASE com o nome do seu banco de dados (por exemplo, DB_DATABASE=api-crud-laravel).
-    Configure DB_USERNAME e DB_PASSWORD de acordo com sua conexão com o banco de dados.
+   - Defina DB_CONNECTION como mysql.
+   - Defina DB_DATABASE com o nome do seu banco de dados (por exemplo, DB_DATABASE=api-crud-laravel).
+   - Configure DB_USERNAME e DB_PASSWORD de acordo com sua conexão com o banco de dados.
 
 ## Em seguida, crie as tabelas de banco de dados necessárias para status e produtos:
 php artisan migrate
