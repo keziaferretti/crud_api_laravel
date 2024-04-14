@@ -1,0 +1,1540 @@
+{
+	"info": {
+		"_postman_id": "e3be4a69-5793-4c84-b663-2946331f6b88",
+		"name": "Api Laravel",
+		"description": "Essa API em Laravel - CRUD em Product e Status.\n\nContém os endpoints para um CRUD básico em Laravel, gerenciando produtos e seus status relacionados.\n\nOs endpoints incluem operações para criar, ler, atualizar e deletar produtos e status.\n\n- Para endpoint {{base_url}} -> [http://127.0.0.1:8000/api](http://127.0.0.1:8000/api)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25859010"
+	},
+	"item": [
+		{
+			"name": "Status",
+			"item": [
+				{
+					"name": "Get Status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/status/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"status",
+								""
+							]
+						},
+						"description": "Retorna uma lista com todos os status cadastrado no banco de dados, com parametros de id e name."
+					},
+					"response": [
+						{
+							"name": "Get Status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/status/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"status",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 18:48:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"em estoque\",\n            \"created_at\": \"2024-04-14T15:49:33.000000Z\",\n            \"updated_at\": \"2024-04-14T15:49:33.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"em reposição\",\n            \"created_at\": \"2024-04-14T15:54:37.000000Z\",\n            \"updated_at\": \"2024-04-14T16:32:26.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"em falta\",\n            \"created_at\": \"2024-04-14T15:55:20.000000Z\",\n            \"updated_at\": \"2024-04-14T15:55:20.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Status ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/status/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"status",
+								"4"
+							]
+						},
+						"description": "Retorna um status especifico do parametro inserido na url"
+					},
+					"response": [
+						{
+							"name": "status id error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/status/4",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"status",
+										"4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 16:51:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Status not found\"\n}"
+						},
+						{
+							"name": "status id sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/status/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"status",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 16:52:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"em reposição\",\n        \"created_at\": \"2024-04-14T15:54:37.000000Z\",\n        \"updated_at\": \"2024-04-14T16:32:26.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Post Status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"name\": \"em reposição\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/status/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"status",
+								""
+							]
+						},
+						"description": "Cria um novo status, parametro utilizado name."
+					},
+					"response": [
+						{
+							"name": "status post sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"name\": \"em reposição!\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/status",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 16:49:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Status created successfully\",\n    \"data\": {\n        \"name\": \"em reposição!\",\n        \"updated_at\": \"2024-04-14T16:49:58.000000Z\",\n        \"created_at\": \"2024-04-14T16:49:58.000000Z\",\n        \"id\": 5\n    }\n}"
+						},
+						{
+							"name": "status post error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"name\": \"em\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/status",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"status"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 16:56:09 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Validation failed\",\n    \"errors\": {\n        \"name\": [\n            \"The name field must be at least 3 characters.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Put Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"id\": 4,\r\n            \"name\": \"em reposiçãppo\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/status/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"status",
+								"4"
+							]
+						},
+						"description": "Atualiza o status existente, utiliza paramtro id e name."
+					},
+					"response": [
+						{
+							"name": "statuc put error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"id\": 4,\r\n            \"name\": \"em reposição\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/status/4",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"status",
+										"4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 16:50:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Status not found\"\n}"
+						},
+						{
+							"name": "status put sucess",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"id\": 5,\r\n            \"name\": \"em reposição!!\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/status/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"status",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 16:51:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Status updated successfully\",\n    \"data\": {\n        \"id\": 5,\n        \"name\": \"em reposição!!\",\n        \"created_at\": \"2024-04-14T16:49:58.000000Z\",\n        \"updated_at\": \"2024-04-14T16:51:29.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "status put error validated",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"id\": 5,\r\n            \"name\": \"em\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/status/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"status",
+										"3"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 16:56:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Validation failed\",\n    \"errors\": {\n        \"name\": [\n            \"The name field must be at least 3 characters.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Status",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n            \"id\": 4,\r\n            \"name\": \"em reposiçãppo\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/status/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"status",
+								""
+							]
+						},
+						"description": "Remove um status pelo seu Id\n\n- Se o status estiver vinculado a um produto, não é possivel excluir, retorna erro."
+					},
+					"response": [
+						{
+							"name": "status delete error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"id\": 5,\r\n            \"name\": \"em reposição!\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/status/8",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"status",
+										"8"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 16:53:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Status not found\"\n}"
+						},
+						{
+							"name": "status delete sucess",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"id\": 6\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/status/6",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"status",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 16:54:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Status deleted successfully\",\n    \"data\": \"ID delete 6\"\n}"
+						},
+						{
+							"name": "status error relacionado product",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "        {\r\n            \"id\": 4,\r\n            \"name\": \"em reposiçãppo\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/status/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"status",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 18:47:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Cannot delete status because it is linked to one or more products\"\n}"
+						}
+					]
+				}
+			],
+			"description": "- Requests\n    - **GET /status:** Buscar todos os status.\n    - **POST /status:** Criar um novo status.\n    - **GET /status/{id}:** Buscar um status específico por ID.\n    - **PUT /status/{id}:** Atualizar um status existente.\n    - **DELETE /status/{id}:** Excluir um status.\n- Código de Resposta:\n    - 200 OK: A request foi bem-sucedida e a lista de status é retornada no corpo da resposta.\n    - 400 Not Found: Nenhum status foi encontrado."
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						},
+						"description": "Retorna uma **lista** de todos os **produtos** disponíveis.\n\nCada produto inclui seu status **relacionamento** status."
+					},
+					"response": [
+						{
+							"name": "Get Product",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 18:42:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successful Product Listing\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Monitor\",\n            \"description\": \"Monitor Philco 29 polegas\",\n            \"price\": \"R$ 899,90\",\n            \"status\": \"em estoque\",\n            \"stock_quantity\": 5,\n            \"created_at\": \"2024-04-14T18:13:26.000000Z\",\n            \"updated_at\": \"2024-04-14T18:39:51.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Amplificador\",\n            \"description\": \"amplificador meteoro\",\n            \"price\": \"R$ 999,99\",\n            \"status\": \"em falta\",\n            \"stock_quantity\": 0,\n            \"created_at\": \"2024-04-14T18:14:50.000000Z\",\n            \"updated_at\": \"2024-04-14T18:33:53.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Notebook\",\n            \"description\": \"Notebook Acer Intel Core i5 8GB RAM - SSD 256GB\",\n            \"price\": \"R$ 2.540,90\",\n            \"status\": \"em estoque\",\n            \"stock_quantity\": 10,\n            \"created_at\": \"2024-04-14T18:16:59.000000Z\",\n            \"updated_at\": \"2024-04-14T18:38:58.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Teclado\",\n            \"description\": \"Teclado semi mecanico\",\n            \"price\": \"R$ 99,90\",\n            \"status\": \"em estoque\",\n            \"stock_quantity\": 5,\n            \"created_at\": \"2024-04-14T18:20:16.000000Z\",\n            \"updated_at\": \"2024-04-14T18:20:16.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Mouse\",\n            \"description\": \"Mouse Gamer Redragon Cobra\",\n            \"price\": \"R$ 157,99\",\n            \"status\": \"em reposição\",\n            \"stock_quantity\": 5,\n            \"created_at\": \"2024-04-14T18:21:50.000000Z\",\n            \"updated_at\": \"2024-04-14T18:42:00.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Product ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						},
+						"description": "Buscar um produto específico por ID"
+					},
+					"response": [
+						{
+							"name": "product id sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/products/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 18:28:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Successful Product Listing\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Monitor\",\n        \"description\": \"Monitor Philco 29 polegas\",\n        \"price\": \"R$ 899,90\",\n        \"status\": \"em estoque\",\n        \"stock_quantity\": 0,\n        \"created_at\": \"2024-04-14T18:15:12.000000Z\",\n        \"updated_at\": \"2024-04-14T18:15:12.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "product id error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/products/22",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"22"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 18:30:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Post Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Tablet\",\r\n    \"description\":\"Tablet Samsung 16Gb\",\r\n    \"price\":\"1450.50\",\r\n    \"status_id\": 1,\r\n    \"stock_quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						},
+						"description": "Cria um novo produto, campos para estar inserindo produto:\n\n**name**: campo obrigatorio,\n\n**descrição**: campo obrigatorio,\n\n**preço**: numerico exemplo(1400.00),\n\n**status_id**: inteiro, possui validação para consultar se o Id do status exite.\n\n**quantidade_em_estoque**: inteiro."
+					},
+					"response": [
+						{
+							"name": "product error validate",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"aa\",\r\n    \"description\":\"aa\",\r\n    \"price\":\"as\",\r\n    \"status_id\": 1,\r\n    \"stock_quatity\": \"asdsa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 18:12:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Validation Error\",\n    \"errors\": {\n        \"name\": [\n            \"The name field must be at least 3 characters.\"\n        ],\n        \"description\": [\n            \"The description field must be at least 3 characters.\"\n        ],\n        \"price\": [\n            \"The price field must be a number.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Post Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Tablet\",\r\n    \"description\":\"Tablet Samsung 16Gb\",\r\n    \"price\":\"1450.50\",\r\n    \"status_id\": 1,\r\n    \"stock_quantity\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 19:10:23 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"id\": 8,\n        \"name\": \"Tablet\",\n        \"description\": \"Tablet Samsung 16Gb\",\n        \"price\": \"R$ 1.450,50\",\n        \"status\": \"em estoque\",\n        \"stock_quantity\": 5,\n        \"created_at\": \"2024-04-14T19:10:23.000000Z\",\n        \"updated_at\": \"2024-04-14T19:10:23.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Put Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 2,\r\n        \"name\": \"Amplificador\",\r\n        \"description\": \"Amplificador meteoro\",\r\n        \"price\": \"899.90\",\r\n        \"status_id\": 2,\r\n        \"stock_quantity\": 0\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "product put error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 2,\r\n        \"name\": \"Amplificador\",\r\n        \"description\": \"amplificador meteoro\",\r\n        \"price\": \"999.99\",\r\n        \"status_id\": 3,\r\n        \"stock_quantity\": 0\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"2"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 18:33:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Validation Error\",\n    \"errors\": {\n        \"status_id\": [\n            \"The selected status id is invalid.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "product put error",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 2,\r\n        \"name\": \"Amplificador\",\r\n        \"description\": \"amplificador meteoro\",\r\n        \"price\": \"999.99\",\r\n        \"status_id\": 3,\r\n        \"stock_quantity\": 0\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 18:33:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Amplificador\",\n        \"description\": \"amplificador meteoro\",\n        \"price\": \"R$ 999,99\",\n        \"status\": \"em falta\",\n        \"stock_quantity\": 0,\n        \"created_at\": \"2024-04-14T18:14:50.000000Z\",\n        \"updated_at\": \"2024-04-14T18:33:53.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Put Product",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"id\": 2,\r\n        \"name\": \"Amplificador\",\r\n        \"description\": \"Amplificador meteoro\",\r\n        \"price\": \"899.90\",\r\n        \"status_id\": 2,\r\n        \"stock_quantity\": 0\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 19:12:17 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Amplificador\",\n        \"description\": \"Amplificador meteoro\",\n        \"price\": \"R$ 899,90\",\n        \"status\": \"em reposição\",\n        \"stock_quantity\": 0,\n        \"created_at\": \"2024-04-14T18:14:50.000000Z\",\n        \"updated_at\": \"2024-04-14T19:12:17.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						},
+						"description": "Realiza o delete do produto existente, utilizamos o parametro do id do produto."
+					},
+					"response": [
+						{
+							"name": "product delete error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products/22",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"22"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 18:36:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product not found\"\n}"
+						},
+						{
+							"name": "product delete error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.12"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Apr 2024 18:36:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product deleted successfully\",\n    \"data\": \"Product deleted: 3\"\n}"
+						}
+					]
+				}
+			],
+			"description": "**Requests por Operação CRUD:**\n\n- **Product:**\n    \n    - **GET /products:** Buscar todos os produtos.\n        \n    - **POST /products:** Criar um novo produto.\n        \n    - **GET /products/{id}:** Buscar um produto específico por ID.\n        \n    - **PUT /products/{id}:** Atualizar um produto existente.\n        \n    - **DELETE /products/{id}:** Excluir um produto.\n        \n- Código de Resposta:\n    \n    - 200 OK: A request foi bem-sucedida e a lista de produtos é retornada no corpo da resposta.\n        \n    - 400 Not Found: Nenhum produto foi encontrado."
+		}
+	]
+}
