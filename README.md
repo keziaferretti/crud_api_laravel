@@ -16,13 +16,12 @@ Antes de começar, você precisa ter instalado em sua máquina os seguintes requ
 
 Para começar, clone este repositório e instale as dependências:
 
-Bash
-git clone https://github.com/keziaferretti/crud_api_laravel.git
-composer install
+    git clone https://github.com/keziaferretti/crud_api_laravel.git
+    composer install
 
 ### Configuração do Banco de Dados:
 
-1 .Crie um banco de dados MySQL (eu utilizei um banco de dados chamado api-crud-laravel).
+1. Crie um banco de dados MySQL (eu utilizei um banco de dados chamado api-crud-laravel).
 2. Renomeie o arquivo .env.example para .env.
 3. Configure as credenciais do banco de dados no arquivo .env:
     Defina DB_CONNECTION como mysql.
