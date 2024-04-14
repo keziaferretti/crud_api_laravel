@@ -24,6 +24,7 @@ Para começar, clone este repositório e instale as dependências:
 1. Crie um banco de dados MySQL (eu utilizei um banco de dados chamado api-crud-laravel).
 2. Renomeie o arquivo .env.example para .env.
 3. Configure as credenciais do banco de dados no arquivo .env:
+
     Defina DB_CONNECTION como mysql.
     Defina DB_DATABASE com o nome do seu banco de dados (por exemplo, DB_DATABASE=api-crud-laravel).
     Configure DB_USERNAME e DB_PASSWORD de acordo com sua conexão com o banco de dados.
@@ -36,7 +37,7 @@ Você verá:
     INFO  Server running on [http://127.0.0.1:8000].
     Press Ctrl+C to stop the server.
     
-Copie a URL (por exemplo, http://127.0.0.1:8000) e utilize-a no Postman para testar os endpoints da API para status ou produtos.
+Copie a URL (por exemplo, http://127.0.0.1:8000/api/) e utilize-a no Postman para testar os endpoints da API para status ou produtos.
 
 
 ## Documentação do Postman
