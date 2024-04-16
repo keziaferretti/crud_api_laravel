@@ -22,7 +22,7 @@ Para começar, clone este repositório e instale as dependências:
 ### Configuração do Banco de Dados:
 
 1. Crie um banco de dados MySQL (eu utilizei um banco de dados chamado api-crud-laravel).
-2. Renomeie o arquivo .env.example para .env.
+2. Renomeie o arquivo .env.example para .env
 3. Configure as credenciais do banco de dados no arquivo .env:
 
    - Defina DB_CONNECTION como mysql.

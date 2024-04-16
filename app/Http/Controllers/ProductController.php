@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use App\ProductControllerInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class ProductController extends Controller
+class ProductController extends Controller implements ProductControllerInterface
 {
 
   public function index()
@@ -137,4 +138,5 @@ class ProductController extends Controller
       'message' => 'Product not found'
     ], 404);
   }
+
 }
