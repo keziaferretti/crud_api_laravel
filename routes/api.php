@@ -10,6 +10,12 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-Route::apiResource('status', StatusController::class);
+Route::prefix('status')->group(function () {
+    Route::get('/', [StatusController::class, 'searchStatus']);
+    Route::get('/{id}', [StatusController::class, 'searchIdStatus']);
+    Route::post('/', [StatusController::class, 'createStatus']);
+    Route::put('/{id}', [StatusController::class, 'updateStatus']);
+    Route::delete('/{id}', [StatusController::class, 'deleteStatus']);
+});
 
 Route::apiResource('products', ProductController::class);

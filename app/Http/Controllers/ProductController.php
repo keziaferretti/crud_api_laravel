@@ -21,16 +21,43 @@ class ProductController extends Controller
     ], 200);
   }
 
-
-  public function store(Request $request)
+  public function rules()
   {
-    $validated = Validator::make($request->all(), [
+    return [
       'name' => 'required|string|min:3',
       'description' => 'required|string|min:3',
       'price' => 'required|numeric',
       'status_id' => 'required|numeric|exists:statuses,id',
-      'stock_quantity' => 'integer'
-    ]);
+      'stock_quantity' => 'integer|min:0',
+    ];
+  }
+
+  public function messages()
+  {
+    return [
+      'name.required' => 'Nome do produto é obrigatório',
+      'name.min' => 'Nome do produto deve ter no mínimo 3 caracteres',
+      'name.string' => 'Nome do produto deve ser uma string',
+
+      'description.required' => 'Descrição do produto é obrigatória',
+      'description.min' => 'Descrição do produto deve ter no mínimo 3 caracteres',
+      
+      'price.required' => 'Preço do produto é obrigatório',
+      'price.numeric' => 'Preço do produto deve ser um número',
+
+      'status_id.exists' => 'Status não existe na tabela de status, por favor, insira um status válido',
+      'status_id.required' => 'Status do produto é obrigatório',
+      'status_id.numeric' => 'Status do produto deve ser um número',
+
+      'stock_quantity.integer' => 'Quantidade do produto deve ser um número inteiro',
+      'stock_quantity.min' => 'Quantidade do produto deve ser no mínimo 0',
+
+    ];
+  }
+
+  public function store(Request $request)
+  {
+    $validated = Validator::make($request->all(), $this->rules(), $this->messages());
     if ($validated->fails()) {
       return response()->json([
         'message' => 'Validation Error',
@@ -56,10 +83,10 @@ class ProductController extends Controller
   {
     $product = Product::find($id);
 
-    if($product){
+    if ($product) {
       return response()->json([
         'message' => 'Successful Product Listing',
-        'data' => new ProductResource($product->load('status'))  
+        'data' => new ProductResource($product->load('status'))
       ], 200);
     }
 
@@ -72,14 +99,8 @@ class ProductController extends Controller
   {
 
     $product = Product::find($id);
-    if($product){
-      $validated = Validator::make($request->all(), [
-        'name' => 'required|string|min:3',
-        'description' => 'required|string|min:3',
-        'price' => 'required|numeric',
-        'status_id' => 'required|numeric|exists:statuses,id',
-        'stock_quantity' => 'integer'
-      ]);
+    if ($product) {
+      $validated = Validator::make($request->all(), $this->rules(), $this->messages());
       if ($validated->fails()) {
         return response()->json([
           'message' => 'Validation Error',
@@ -104,11 +125,11 @@ class ProductController extends Controller
   {
     $product = Product::find($id);
 
-    if($product){
+    if ($product) {
       $product->delete();
       return response()->json([
         'message' => 'Product deleted successfully',
-        'data' => 'Product deleted: '.$id
+        'data' => 'Product deleted: ' . $id
       ], 200);
     }
 

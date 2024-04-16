@@ -17,7 +17,7 @@ class StatusController extends Controller implements StatusControllerInterface
     $this->status = $status;
   }
 
-  public function index()
+  public function searchStatus()
   {
     $status = $this->status::all();
 
@@ -27,12 +27,20 @@ class StatusController extends Controller implements StatusControllerInterface
     ]);
   }
 
-  public function store(Request $request)
+  public function createStatus(Request $request)
   {
 
-    $validator = Validator::make($request->all(), [
-      'name' => 'required|string|min:3'
-    ]);
+    $validator = Validator::make(
+      $request->all(),
+      [
+        'name' => 'required|string|min:3'
+      ],
+      [
+        'name.required' => 'Nome é obrigatório',
+        'name.string' => 'Nome deve ser uma string',
+        'name.min' => 'Nome deve ter no mínimo 3 caracteres'
+      ]
+    );
 
     if ($validator->fails()) {
       return response()->json([
@@ -55,7 +63,7 @@ class StatusController extends Controller implements StatusControllerInterface
     ], 400);
   }
 
-  public function show(string $id)
+  public function searchIdStatus(string $id)
   {
     $status = $this->status::find($id);
     if ($status) {
@@ -70,11 +78,19 @@ class StatusController extends Controller implements StatusControllerInterface
     ], 404);
   }
 
-  public function update(Request $request, string $id)
+  public function updateStatus(Request $request, string $id)
   {
-    $validator = Validator::make($request->all(), [
-      'name' => 'required|string|min:3'
-    ]);
+    $validator = Validator::make(
+      $request->all(),
+      [
+        'name' => 'required|string|min:3'
+      ],
+      [
+        'name.required' => 'Nome é obrigatório',
+        'name.string' => 'Nome deve ser uma string',
+        'name.min' => 'Nome deve ter no mínimo 3 caracteres'
+      ]
+    );
 
     if ($validator->fails()) {
       return response()->json([
@@ -99,7 +115,7 @@ class StatusController extends Controller implements StatusControllerInterface
     ], 404);
   }
 
-  public function destroy(string $id)
+  public function deleteStatus(string $id)
   {
     $status = $this->status::find($id);
 
