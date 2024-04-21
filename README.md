@@ -17,6 +17,8 @@ Antes de começar, você precisa ter instalado em sua máquina os seguintes requ
 Para começar, clone este repositório e instale as dependências:
 
     git clone https://github.com/keziaferretti/crud_api_laravel.git
+
+Após o clono, necessário instalar as dependências do laravel, com comando 
     composer install
 
 ### Configuração do Banco de Dados:
