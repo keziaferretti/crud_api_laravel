@@ -18,9 +18,10 @@ Para começar, clone este repositório e instale as dependências:
 
     git clone https://github.com/keziaferretti/crud_api_laravel.git
 
-Após o clono, necessário instalar as dependências do laravel, com comando 
-    composer install
-
+Após o clone, necessário instalar as dependências do laravel, com comando
+     composer install
+ 
+    
 ### Configuração do Banco de Dados:
 
 1. Crie um banco de dados MySQL (eu utilizei um banco de dados chamado api-crud-laravel).
